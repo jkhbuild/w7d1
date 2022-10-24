@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "cats#index"
 
-  resources :users, only [:new, :create]
+  resources :users, only: [:new, :create]
 
-  resource :session, only [:new, :create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
 
   resources :cats, except: :destroy do
     resources :cat_rental_requests, only: [:new]
